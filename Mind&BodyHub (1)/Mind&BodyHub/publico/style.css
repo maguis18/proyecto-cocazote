@@ -4,7 +4,7 @@ h1 {
 h1 {
     text-decoration: underline;
   }
-
+/* Seccion de enlaces  parte de divison que no me sale*/
   header {
     display: flex;
     justify-content: center;
@@ -138,7 +138,7 @@ h1 {
   }
 
 
-/* Seccion de enlaces  parte de divison que no me sale*/
+
 
 .find-section {
   padding: 2rem;
