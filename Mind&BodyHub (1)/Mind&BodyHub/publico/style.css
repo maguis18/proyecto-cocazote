@@ -355,3 +355,136 @@ h1 {
   text-align: center;
   margin: 0;
 }
+/* parte para el carrucel y el loader*/
+
+  .activity-cards {
+    position: relative;
+    width: 80%; 
+    margin: auto;
+    overflow: hidden; 
+    border: 2px solid #ddd;
+    border-radius: 8px;
+  }
+  .carrusel {
+    display: flex; 
+    transition: transform 0.5s ease-in-out; 
+  }
+  
+ 
+  .carrusel img {
+    width: 100%; 
+    height: auto;
+  }
+  
+  /* Botones de navegación */
+  button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  button.prev {
+    left: 10px;
+  }
+  
+  button.next {
+    right: 10px;
+  }
+  
+  button.prev:hover,button.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .loader::before,
+  .loader::after {    
+    content: "";
+    grid-area: 1/1;
+    margin: 2px;
+    border: inherit;
+    border-radius: 50%;
+    animation: l15 2s infinite;
+  }
+.loader{
+    height: 350px;
+    width: 350px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.loader div:nth-child(1){
+    background-color: #dd1c4b;
+    height: 200px;
+    width: 125px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 40px;
+    right: 0;
+    transform: rotate(45deg);
+    border-radius: 100px 100px 10px 10px;
+    transform-origin: 50% 69%;
+    animation: flip1 4s linear infinite;
+}
+
+@keyframes flip1{
+    25%{
+        transform: rotate(45deg) rotateX(180deg);
+    }
+    50%{
+        transform: rotate(45deg) rotateX(180deg);
+    }
+    75%{
+        transform: rotate(45deg);
+    }
+}
+
+.loader div:nth-child(2){
+    height: 200px;
+    width: 125px;
+    background-color: #dd1c4b;
+    position: absolute;
+    top: 151px;
+    left: 132px;
+    transform: rotate(135deg);
+    transform-origin: 50% 31%;
+    border-radius: 10px 10px 100px 100px;
+    animation: flip2 4s 1s linear infinite;
+}
+
+@keyframes flip2{
+    25%{
+        transform: rotate(135deg) rotateX(180deg);
+    }
+    50%{
+        transform: rotate(135deg) rotateX(180deg);
+    }
+    75%{
+        transform: rotate(135deg);
+    }
+}
+.hidden {
+  display: none; /* Oculta el loader por defecto */
+}
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8); /* Fondo translúcido */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
